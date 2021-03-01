@@ -41,15 +41,46 @@ def main():
     smst = 0
     prasyarat = defaultdict()
     #dengan menggunakan fungsi extract_line, karakter , . \n telah dihapus
+    nama = str(input("Nama Mahasiswa: "))
+    print("Halo ", nama)
+    pilihan = ["rencana_kuliah" , "Wisuda" , "ukt"]
+    print(pilihan)
+    pil = str(input(""))
+    if pil == "rencana_kuliah" :
+        print("Tunggu sebentar, rencana studi anda sedang dibaca")
+        print("rencana studi telah selesai dibaca, hasilnya: ")
+        for line in Lines:
+            kuliah = extract_line(line)
 
-    for line in Lines:
-        kuliah = extract_line(line)
-
-        prasyarat[kuliah[0]] = kuliah[1:]
+            prasyarat[kuliah[0]] = kuliah[1:]
     
-    t_sort(prasyarat,smst)
+        t_sort(prasyarat,smst)
+        print("Sampai Jumpa")
+    elif pil == "Wisuda":
+        print("Anda belum terdaftar sebagai calon peserta wisuda.")
+        print("Sampai Jumpa")
+    elif pil == "ukt":
+        print("Anda tidak mendapat keringanan")
+        print("Sampai Jumpa")
 
-
+def logoHMIF():
+  print("%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+  print("%*,,,,,,,,,&&&&&&&&&&&&&&&&&&&&&%%%%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&%,(")
+  print("%*,,#,,,,,,@@@@@@@@@@@@@@@@@@@@@,,,,@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@,(")
+  print("%*/###,,,,,@@@@@@@@@@@@@@@@@@@@@,,,,@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@,(")
+  print("%*,%,,,,,,,@@@@@@@@@@@@@@@@@@@@@,,,,&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&,(")
+  print("%*,,,,,,,,,,,,,,@@@@@@@@@@@,,,,,,,,,,,,,,#@@@@@@@@@@,,,,,,,,,,,,,,,,,@@@@@@@@@,(")
+  print("%*,,#(,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(")
+  print("%*#,,,,,,,,,,,,,@@@@@@@@@@@,,,,,,,,,,,,,,#@@@@@@@@@@@@@@@@@@@@,/*,//*(%/**/,/,,(")
+  print("%**(((,,,,,****************************************************(/(*##*(/**,##*,(")
+  print("%*/###,,,,,,,,,,@@@@@@@@@@@,,,,,,,,,,,,,,#@@@@@@@@@@@@@@@@@@@@,*,,,(,,,,(,,,(,,(")
+  print("%*,*,(,,,,,(((((@@@@@@@@@@@((((((((((((((&@@@@@@@@@@((((((((((((.,,,#(,,%(,,%(,(")
+  print("%*,*,(,,,,,(((((@@@@@@@@@@@((((((((((((((&@@@@@@@@@@((((((((((((.,,,#(,,%(,,%(,(")
+  print("%**((@,,,,,,,,,,@@@@@@@@@@@,,,,,,,,,,,,,,#@@@@@@@@@@,,,,,,,,,,,/,**,//%((,/,,,,(")
+  print("%**///,,,,,@@@@@@@@@@@@@@@@@@@@@,,,,@@@@@@@@@@@@@@@@@@@@@@@,,,,,((((,,,*,*,,%,,(")
+  print("%*,,,,,,,,,(((((((((((((((((((((,,,,(((((((((((((((((((((((,,,*,,,,,***/,,,,,(,(")
+  print("%*,,,,,,,,,@@@@@@@@@@@@@@@@@@@@@,,,,@@@@@@@@@@@@@@@@@@@@@@@,,,,/,,,,,*/,,,,,,,,(")
 
 if __name__ == "__main__":
+    logoHMIF()
     main()
